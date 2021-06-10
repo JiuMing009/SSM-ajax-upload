@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.mapper.UserMapper">
+
+    <!--回显-->
+    <select id="byUsername" resultType="User">
+        select * from user_table where username = #{username}
+    </select>
+
+    <!--更换头像-->
+    <update id="updateUser" parameterType="com.hy.entity.User">
+        update user_table set password=#{password},avatar=#{avatar} where username =#{username};
+    </update>
+
+</mapper>
